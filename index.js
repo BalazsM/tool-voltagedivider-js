@@ -96,12 +96,12 @@ function update() {
 		let cell = document.createElement('td');
 		row.appendChild(cell);
 		cell.classList.add('text-end');
-		cell.innerHTML = result.r1.toFixed(0) + '&#x2126;';
+		cell.innerHTML = formatValue(result.r1) + '&#x2126;';
 
 		cell = document.createElement('td');
 		row.appendChild(cell);
 		cell.classList.add('text-end');
-		cell.innerHTML = result.r2.toFixed(0) + '&#x2126;';
+		cell.innerHTML = formatValue(result.r2) + '&#x2126;';
 
 		cell = document.createElement('td');
 		row.appendChild(cell);
@@ -115,8 +115,17 @@ function update() {
 	}
 }
 
-function parseUnitPrefix(value){
-	const re = new RegExp('([0-9]+)(m?)(k?)','i');
+function formatValue(v) {
+	if (v < 1000) {
+		return v.toFixed(0);
+	} else if (v < 1000000) {
+		return (Math.round(v / 1000 * 100) / 100) + 'k';
+	} else
+		return (Math.round(v / 1000000 * 100) / 100) + 'M';
+}
+
+function parseUnitPrefix(value) {
+	const re = new RegExp('([0-9]+)(M?)(k?)','i');
 	const rer = re.exec(value);
 	var result = rer[1];
 	if (rer[2]) 
