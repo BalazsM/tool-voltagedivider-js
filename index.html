@@ -22,91 +22,83 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="card mb-2">
-								<div class="bard-body m-2">
-									<img src="circuit.png" class="mx-auto d-block"/>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="card mb-2">
-								<div class="bard-body">
-									<div class="col">\[V_{out} = {R_2 \over R_1 + R_2} * V_{in}\]</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col">
-							<label for="scaleSelect" class="form-label">Scale</label>
-							<select id="scaleSelect" class="form-select" required onkeypress="update();" onchange="update()"/>
-								<option selected value="e24">E24 (5%)</option>
-								<option value="e96">E96 (1%)</option>
-							</select>
-						</div>
-						<div class="col">
-							<label for="vInInput" class="form-label">V<sub>in</sub></label>
-							<div class="input-group has-validation">
-								<input id="vInInput" type="number" class="form-control text-end" required value="5" onkeypress="update();" onchange="update()"//>
-								<span class="input-group-text">V</span>
-								<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
-							</div>
-						</div>
-						<div class="col">
-							<label for="vOutInput" class="form-label">V<sub>out</sub></label>
-							<div class="input-group has-validation">
-								<input id="vOutInput" type="number" class="form-control text-end" required value="3.3" onkeypress="update();" onchange="update()"//>
-								<span class="input-group-text">V</span>
-								<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
-							</div>
-						</div>
-						<div class="col">
-							<label for="errorMaxInput" class="form-label">Error<sub>max</sub></label>
-							<div class="input-group has-validation">
-								<input id="errorMaxInput" type="number" class="form-control text-end" required value="0.1" min="0" max="100" step="0.01" onkeypress="update();" onchange="update()"/>
-								<span class="input-group-text">%</span>
-								<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
-							</div>
-						</div>
-						<div class="col">
-							<label for="rMinInput" class="form-label">R<sub>min</sub></label>
-							<div class="input-group has-validation">
-								<input id="rMinInput" type="text" class="form-control text-end" required value="1k" onkeypress="update();" onchange="update()"//>
-								<span class="input-group-text">&#x2126;</span>
-								<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
-							</div>
-						</div>
-						<div class="col">
-							<label for="rMaxInput" class="form-label">R<sub>max</sub></label>
-							<div class="input-group has-validation">
-								<input id="rMaxInput" type="text" class="form-control text-end" required value="100k" onkeypress="update();" onchange="update()"//>
-								<span class="input-group-text">&#x2126;</span>
-								<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
-							</div>
-						</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="card mb-2">
+					<div class="card-body m-2">
+						<img src="circuit.png" class="mx-auto d-block"/>
 					</div>
 				</div>
 			</div>
-			<div class="col-3">
-				<div class="card">
+			<div class="col-sm-6 col-md-4">
+				<div class="card mb-2">
+					<div class="card-body">
+						<div class="col">\[V_{out} = {R_2 \over R_1 + R_2} * V_{in}\]</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-lg-2">
+				<label for="scaleSelect" class="form-label">Scale</label>
+				<select id="scaleSelect" class="form-select" required onkeypress="update();" onchange="update()"/>
+					<option selected value="e24">E24 (5%)</option>
+					<option value="e96">E96 (1%)</option>
+				</select>
+			</div>
+			<div class="col-sm-4 col-lg-2">
+				<label for="vInInput" class="form-label">V<sub>in</sub></label>
+				<div class="input-group has-validation">
+					<input id="vInInput" type="number" class="form-control text-end" required value="5" onkeypress="update();" onchange="update()"//>
+					<span class="input-group-text">V</span>
+					<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
+				</div>
+			</div>
+			<div class="col-sm-4 col-lg-2">
+				<label for="vOutInput" class="form-label">V<sub>out</sub></label>
+				<div class="input-group has-validation">
+					<input id="vOutInput" type="number" class="form-control text-end" required value="3.3" onkeypress="update();" onchange="update()"//>
+					<span class="input-group-text">V</span>
+					<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
+				</div>
+			</div>
+			<div class="col-sm-4 col-lg-2">
+				<label for="errorMaxInput" class="form-label">Error<sub>max</sub></label>
+				<div class="input-group has-validation">
+					<input id="errorMaxInput" type="number" class="form-control text-end" required value="0.1" min="0" max="100" step="0.01" onkeypress="update();" onchange="update()"/>
+					<span class="input-group-text">%</span>
+					<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
+				</div>
+			</div>
+			<div class="col-sm-4 col-lg-2">
+				<label for="rMinInput" class="form-label">R<sub>min</sub></label>
+				<div class="input-group has-validation">
+					<input id="rMinInput" type="text" class="form-control text-end" required value="1k" onkeypress="update();" onchange="update()"//>
+					<span class="input-group-text">&#x2126;</span>
+					<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
+				</div>
+			</div>
+			<div class="col-sm-4 col-lg-2">
+				<label for="rMaxInput" class="form-label">R<sub>max</sub></label>
+				<div class="input-group has-validation">
+					<input id="rMaxInput" type="text" class="form-control text-end" required value="100k" onkeypress="update();" onchange="update()"//>
+					<span class="input-group-text">&#x2126;</span>
+					<div class="invalid-feedback">Please choose a username.</div> <!--TODO: validation -->
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="card mt-2">
 					<div class="card-body">
 						<h5>Results</h5>
 
 						<table class="table table-sm table-striped">
-						<thead>
-							<tr>
-								<th class="text-end">R<sub>1</sub></th>
-								<th class="text-end">R<sub>2</sub></th>
-								<th class="text-end">V<sub>out</sub></th>
-								<th class="text-end">Error</th>
-							</tr>
-						</thead>
-						<tbody id="results-tbody">
-						</tbody>
+							<thead>
+								<tr>
+									<th class="text-end">R<sub>1</sub></th>
+									<th class="text-end">R<sub>2</sub></th>
+									<th class="text-end">V<sub>out</sub></th>
+									<th class="text-end">Error</th>
+								</tr>
+							</thead>
+							<tbody id="results-tbody">
+							</tbody>
 						</table>
 					</div>
 				</div>
